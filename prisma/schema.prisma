@@ -20,4 +20,13 @@ model Tweet {
   userId  Int
 }
 
-
+model User {
+  id      Int       @id @default(autoincrement())
+  email   String    @unique
+  handle  String    @unique
+  name    String
+  avatar  String
+  about   String
+  tweets  Tweet[]
+  liked   Liked[]
+}
